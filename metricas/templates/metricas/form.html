@@ -1,0 +1,15 @@
+<form action="/metricas/" method="post">{% csrf_token %}
+    {{ form }}
+    <input type="submit" value="OK">
+</form>
+
+
+<br><br>
+<h1>Metricas</h1>
+<ul>
+{% for metrica in lista_metricas %}
+    <li>{{ metrica.data }} - {{ metrica.nome }} - {{ metrica.valor }}</li>
+{% empty %}
+    <li>Sem métricas.</li>
+{% endfor %}
+</ul>
